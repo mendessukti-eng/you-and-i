@@ -195,72 +195,120 @@
     </ul>
   </section>
 
-  <section id="notes" class="card">
-    <h2 style="margin:0 0 8px 0">Notes and Letters</h2>
-    <p class="small">Little pockets of words click to open</p>
+  <!-- FUN / GAMES -->
+  <section id="fun" class="card" aria-label="Fun & Games">
+    <h2 style="margin:0 0 8px 0">Fun — Spin & Compliment</h2>
+    <div class="small">Click the heart to get a random compliment (perfect for screenshots).</div>
 
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-      <div style="flex:1;min-width:220px" class="card">
-        <div style="font-weight:700">Open when you miss me</div>
-        <p class="small" style="margin-top:8px">Hey if you're missing me read this I miss you more Let's plan a silly movie night when I come next</p>
-      </div>
-
-      <div style="flex:1;min-width:220px" class="card">
-        <div style="font-weight:700">Open when you're proud</div>
-        <p class="small" style="margin-top:8px">I'm proud of you always Keep going love I’ll celebrate with you soon</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="fun" class="card">
-    <h2 style="margin:0 0 8px 0">Fun Things</h2>
     <div class="fun-grid" style="margin-top:12px">
-      <div class="wheel">
-        <div class="compliment">Your smile</div>
-        <div class="small">makes all my bad days good</div>
+      <div class="wheel card" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div id="complimentText" class="compliment">You are my favourite hello.</div>
+        <button class="btn" onclick="newCompliment()">Get a cute line</button>
       </div>
-      <div class="wheel">
-        <div class="compliment">Your hugs</div>
-        <div class="small">are a tiny safe place</div>
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div style="font-weight:700">Tiny quiz</div>
+        <div class="small" style="margin-top:8px">What's our favourite snack?<br>
+          <button style="margin-top:10px" onclick="alert('Momos forever!')">Guess</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="future" class="card">
+  <!-- FUTURE US -->
+  <section id="future" class="card" aria-label="Future Us">
     <h2 style="margin:0 0 8px 0">Future Us</h2>
-    <p class="small">This little site is a promise of more memories more love and more small joys to come</p>
+    <p class="small">A playful imagining of our small, perfect future.</p>
+    <div style="margin-top:10px;color:var(--muted)">
+      Imagine us older, still teasing each other in supermarket aisles, making terrible playlists, and falling asleep on the couch with the TV loud. We will still choose each other — every single day.
+    </div>
   </section>
 
+  <!-- CONTACT / LOVE REQUEST -->
+  <section id="contact" class="card" aria-label="Contact">
+    <h2 style="margin:0 0 8px 0">Contact (for love only 💌)</h2>
+    <p class="small">Use this silly form to request hugs, kisses, complaints, or midnight calls.</p>
+
+    <form id="loveForm" onsubmit="return handleForm(event)" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+      <input name="name" placeholder="Your nickname" style="flex:1;min-width:180px;padding:10px;border-radius:10px;border:1px solid #eee">
+      <input name="req" placeholder="I request..." style="flex:2;min-width:220px;padding:10px;border-radius:10px;border:1px solid #eee">
+      <button class="btn" style="padding:10px 16px" type="submit">Send</button>
+    </form>
+    <div id="formMsg" class="small" style="margin-top:8px;color:var(--muted)"></div>
+  </section>
+
+  <footer>
+    Made with ❤️ — a tiny website for my favourite human.
+  </footer>
 </div>
 
-<footer>
-  Made with love by Me for You  
-</footer>
+<!-- Lightbox -->
+<div id="lightbox" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:60">
+  <img id="lightboxImg" src="" alt="enlarged" style="max-width:92%;max-height:82%;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.6)">
+</div>
 
 <script>
-function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
-function openLightbox(img){
-  const overlay=document.createElement('div');
-  overlay.style.position='fixed';
-  overlay.style.top=0;
-  overlay.style.left=0;
-  overlay.style.width='100%';
-  overlay.style.height='100%';
-  overlay.style.background='rgba(0,0,0,0.8)';
-  overlay.style.display='flex';
-  overlay.style.alignItems='center';
-  overlay.style.justifyContent='center';
-  overlay.style.cursor='pointer';
-  overlay.onclick=function(){overlay.remove()};
-  const image=document.createElement('img');
-  image.src=img.src;
-  image.style.maxWidth='90%';
-  image.style.maxHeight='90%';
-  image.style.borderRadius='12px';
-  overlay.appendChild(image);
-  document.body.appendChild(overlay);
-}
-</script>
+  // Navigation highlight + smooth scroll
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(a=>{
+    a.addEventListener('click', e=>{
+      navLinks.forEach(x=>x.classList.remove('active'));
+      a.classList.add('active');
+    });
+  });
+  function scrollToId(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+    document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+    const el = document.querySelector('nav a[href="#'+id+'"]');
+    if(el) el.classList.add('active');
+  }
 
+  // Lightbox for gallery
+  function openLightbox(img){
+    const src = img.src;
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+  document.getElementById('lightbox').addEventListener('click', ()=>document.getElementById('lightbox').style.display='none');
+
+  // Compliments
+  const compliments = [
+    "You are my favourite hello.",
+    "You make the ordinary feel special.",
+    "Your laugh is my favourite song.",
+    "You have the kindest heart, always.",
+    "With you, every moment becomes a memory.",
+    "You are brave, soft, and wonderfully you."
+  ];
+  function newCompliment(){
+    const i = Math.floor(Math.random()*compliments.length);
+    document.getElementById('complimentText').textContent = compliments[i];
+  }
+
+  // Tiny love form (local only)
+  function handleForm(e){
+    e.preventDefault();
+    const fm = e.target;
+    const name = fm.name.value || "Babe";
+    const req = fm.req.value || "A hug pls";
+    // This demo does NOT send data to any server. Instead it shows a confirmation message.
+    document.getElementById('formMsg').textContent = `Sent! ${name} requested: "${req}". (This is a local demo — replace with your email/logic to save)`;
+    fm.reset();
+    return false;
+  }
+
+  // Auto update active nav on scroll
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY + 120;
+    let cur = sections[0].id;
+    for(const s of sections){
+      if(s.offsetTop <= y) cur = s.id;
+    }
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.classList.toggle('active', a.getAttribute('href') === '#'+cur);
+    });
+  });
+
+</script>
 </body>
 </html>
