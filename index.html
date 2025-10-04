@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Our Job Is To Make You Happy</title>
+<meta name="description" content="A little love-site for my boyfriend — story, memories and silly things.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff7fb;
+    --card:#ffffff;
+    --accent:#ff6b9b;
+    --muted:#6b6b75;
+    --glass: rgba(255,255,255,0.7);
+    --shadow: 0 6px 20px rgba(15,15,30,0.08);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#1f1f28;background:linear-gradient(180deg,#fff7fb 0%, #fff 100%);}
+  a{color:var(--accent);text-decoration:none}
+  header{position:sticky;top:12px;z-index:20;display:flex;justify-content:center}
+  nav{display:flex;gap:10px;background:linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));padding:8px 12px;border-radius:999px;box-shadow:var(--shadow);align-items:center}
+  nav a{font-weight:600;font-size:14px;padding:8px 10px;border-radius:999px;color:#333}
+  nav a.active{background:linear-gradient(90deg,var(--accent),#ff9db8);color:white;box-shadow:0 6px 18px rgba(255,107,155,0.18)}
+  .container{max-width:980px;margin:28px auto;padding:18px}
+  .hero{
+    background:linear-gradient(180deg, rgba(255,245,248,0.9), rgba(255,255,255,0.5));
+    border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center;box-shadow:var(--shadow);
+  }
+  .hero h1{font-family:'Dancing Script',cursive;font-size:40px;margin:0;color:#ff3a7a}
+  .hero p{margin:8px 0 0;color:var(--muted);line-height:1.5}
+  .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--shadow);margin-top:18px}
+  section{margin-top:26px}
+  .story-timeline{display:flex;flex-direction:column;gap:12px}
+  .story-item{display:flex;gap:14px;align-items:flex-start}
+  .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#ffd1e2,#fef1f4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#8b2f45}
+  .quote{font-family:'Dancing Script',cursive;font-size:20px;color:var(--accent);margin:8px 0}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+  .gallery-grid img{width:100%;height:120px;object-fit:cover;border-radius:10px;display:block}
+  .reason-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .reason{padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff7fb);box-shadow:0 6px 18px rgba(80,60,120,0.04)}
+  .bucket-list li{margin:8px 0}
+  .btn{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;box-shadow:0 8px 18px rgba(255,107,155,0.14)}
+  .small{font-size:13px;color:var(--muted)}
+  footer{margin:36px 0 60px;text-align:center;color:var(--muted);font-size:13px}
+  .fun-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .wheel{background:linear-gradient(180deg,#fff,#fff9fb);padding:14px;border-radius:12px;text-align:center}
+  .compliment{font-weight:700;font-size:18px;color:#2f2f3a;padding:10px}
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr; padding:18px}
+    nav{overflow:auto;padding:6px}
+    .fun-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav id="mainnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#story">Our Story</a>
+    <a href="#firstdate">First Date</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reasons">Reasons</a>
+    <a href="#bucket">Bucket List</a>
+    <a href="#notes">Notes</a>
+    <a href="#fun">Fun</a>
+    <a href="#future">Future Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <section id="home" class="hero">
+    <div>
+      <h1>Our job is to make you happy</h1>
+      <p class="small">For you a tiny corner of the internet where every line is about us. Built with love for my favourite person.</p>
+
+      <div class="card" style="margin-top:18px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:64px;height:64px;background:linear-gradient(135deg,#ffd1e2,#fef1f4);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Dancing Script',cursive;color:#8b2f45">E & A</div>
+          <div>
+            <div style="font-weight:700">You and Me</div>
+            <div class="small">Little site big feelings</div>
+          </div>
+        </div>
+        <p style="margin-top:12px;color:var(--muted)">Pro tip: press the navigation links at top or scroll. You can customize the text and images easily everything is meant to be editable.</p>
+      </div>
+
+    </div>
+
+    <div>
+      <div class="card" style="text-align:center">
+        <div style="font-family:'Dancing Script',cursive;font-size:28px;color:var(--accent)">A love story</div>
+        <div class="quote">"Once upon a time"</div>
+        <p class="small">Tap <span class="btn" onclick="scrollToId('story')">Our Story</span> to read how we met.</p>
+      </div>
+      <div class="card" style="margin-top:12px;text-align:center">
+        <div style="font-weight:700">Random Love Note</div>
+        <div style="margin-top:8px">You make ordinary days feel like tiny celebrations.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="card">
+    <h2 style="margin:0 0 8px 0">Once Upon a Time</h2>
+    <div class="story-timeline">
+      <div class="story-item">
+        <div class="avatar">30</div>
+        <div>
+          <div style="font-weight:700">December 30</div>
+          <p style="margin:6px 0;color:var(--muted)">
+            It was 30th December and I was a little bored at a wedding so I swiped through Bumble just for fun and set my location nearby. By pure coincidence he was nearby visiting too and we matched.
+          </p>
+        </div>
+      </div>
+
+      <div class="story-item">
+        <div class="avatar">04</div>
+        <div>
+          <div style="font-weight:700">January 4</div>
+          <p style="margin:6px 0;color:var(--muted)">
+            Without even hearing his voice or doing a video call, on 4th January we started dating. It was a leap of faith words and messages that felt so right.
+          </p>
+        </div>
+      </div>
+
+      <div class="story-item">
+        <div class="avatar">Apr</div>
+        <div>
+          <div style="font-weight:700">April — Our first meeting</div>
+          <p style="margin:6px 0;color:var(--muted)">
+            In April I finally went to Vellore to meet him for the first time and it was amazing. That day changed everything.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="firstdate" class="card">
+    <h2 style="margin:0 0 8px 0">Our First Date</h2>
+    <p class="small">A memory I keep on loop</p>
+
+    <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:240px">
+        <p style="color:var(--muted);line-height:1.6">
+          That April day in Vellore will always be one of my favourites. We finally met after months of waiting and the moment we were together it felt like home. We sat in the hotel and clung to each other like we never wanted to leave and we didn't. The hours slipped by but it never felt like time was moving. It was just us lost in our own little world. That day was more than a first date it was a glimpse into our future a promise of many tomorrows.
+        </p>
+      </div>
+
+      <div style="width:260px">
+        <div style="border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+          <img src="us1.jpeg" alt="First meeting" style="width:100%;height:180px;object-fit:cover;display:block">
+          <div style="padding:12px;background:linear-gradient(180deg,#fff,#fff7fb)">
+            <div style="font-weight:700">April Vellore</div>
+            <div class="small" style="margin-top:6px">Our first day together small endless perfect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="card">
+    <h2 style="margin:0 0 8px 0">Gallery</h2>
+    <p class="small">Photos and little moments click to enlarge</p>
+    <div class="gallery-grid" style="margin-top:12px">
+      <img src="us1.jpeg" alt="photo 1" onclick="openLightbox(this)">
+      <img src="us2.jpeg" alt="photo 2" onclick="openLightbox(this)">
+      <img src="us4.jpeg" alt="photo 3" onclick="openLightbox(this)">
+      <img src="us5.jpeg" alt="photo 4" onclick="openLightbox(this)">
+      <img src="us6.jpeg" alt="photo 5" onclick="openLightbox(this)">
+    </div>
+  </section>
+
+  <section id="reasons" class="card">
+    <h2 style="margin:0 0 8px 0">Reasons Why I Love You</h2>
+    <div class="reason-list" style="margin-top:12px">
+      <div class="reason">Because you make me laugh at the worst times</div>
+      <div class="reason">Because you hold me like home</div>
+      <div class="reason">Because you support my awesomeness and my chaos</div>
+      <div class="reason">Because your texts make my whole day better</div>
+      <div class="reason">Because you dream with me big and small</div>
+      <div class="reason">Because you always try even when it's hard</div>
+    </div>
+  </section>
+
+  <section id="bucket" class="card">
+    <h2 style="margin:0 0 8px 0">Bucket List — Things we want to do</h2>
+    <ul class="bucket-list small" style="margin-top:10px">
+      <li>Travel to Manali and wake up to mountains</li>
+      <li>Eat 100 momos in a day or at least 10</li>
+      <li>Watch the sunrise from a tiny cold hill station</li>
+      <li>Make a scrapbook of all our silly receipts and tickets</li>
+      <li>Get old and still hold hands on noisy evenings</li>
+    </ul>
+  </section>
+
+  <section id="notes" class="card">
+    <h2 style="margin:0 0 8px 0">Notes and Letters</h2>
+    <p class="small">Little pockets of words click to open</p>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+      <div style="flex:1;min-width:220px" class="card">
+        <div style="font-weight:700">Open when you miss me</div>
+        <p class="small" style="margin-top:8px">Hey if you're missing me read this I miss you more Let's plan a silly movie night when I come next</p>
+      </div>
+
+      <div style="flex:1;min-width:220px" class="card">
+        <div style="font-weight:700">Open when you're proud</div>
+        <p class="small" style="margin-top:8px">I'm proud of you always Keep going love I’ll celebrate with you soon</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fun" class="card">
+    <h2 style="margin:0 0 8px 0">Fun Things</h2>
+    <div class="fun-grid" style="margin-top:12px">
+      <div class="wheel">
+        <div class="compliment">Your smile</div>
+        <div class="small">makes all my bad days good</div>
+      </div>
+      <div class="wheel">
+        <div class="compliment">Your hugs</div>
+        <div class="small">are a tiny safe place</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="future" class="card">
+    <h2 style="margin:0 0 8px 0">Future Us</h2>
+    <p class="small">This little site is a promise of more memories more love and more small joys to come</p>
+  </section>
+
+</div>
+
+<footer>
+  Made with love by Me for You  
+</footer>
+
+<script>
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function openLightbox(img){
+  const overlay=document.createElement('div');
+  overlay.style.position='fixed';
+  overlay.style.top=0;
+  overlay.style.left=0;
+  overlay.style.width='100%';
+  overlay.style.height='100%';
+  overlay.style.background='rgba(0,0,0,0.8)';
+  overlay.style.display='flex';
+  overlay.style.alignItems='center';
+  overlay.style.justifyContent='center';
+  overlay.style.cursor='pointer';
+  overlay.onclick=function(){overlay.remove()};
+  const image=document.createElement('img');
+  image.src=img.src;
+  image.style.maxWidth='90%';
+  image.style.maxHeight='90%';
+  image.style.borderRadius='12px';
+  overlay.appendChild(image);
+  document.body.appendChild(overlay);
+}
+</script>
+
+</body>
+</html>
